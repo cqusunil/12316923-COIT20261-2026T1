@@ -190,20 +190,6 @@ As part of the submission requirement, I added a **text annotation** on the proj
 ![Canvas annotated with student information](./images/Week01/15-NodeWithInfo.png)
 _Figure 8b – I added my student information as a text label on the canvas, as required for the submission._
 
-#### Exploring Node Properties
-
-I then right-clicked on the Linux Host node to explore its available options. The context menu displayed the following:
-
-| Option                     | Description                         | My Use                                            |
-| -------------------------- | ----------------------------------- | ------------------------------------------------- |
-| **Start**                  | Starts the node                     | Used to start the node after adding it            |
-| **Stop**                   | Shuts down the node                 | Used when restarting the node after configuration |
-| **Console**                | Opens a terminal in the GNS3 window | Alternate way to access the command line          |
-| **Web Console**            | Opens a browser-based terminal      | Used to run commands on the node                  |
-| **Web Console in New Tab** | Opens the terminal in a new tab     | My preferred method for easier access             |
-| **Configure**              | Opens network/hardware settings     | Used in Step 10 to set the IP address             |
-| **Edit Config**            | Edits the startup configuration     | Used for persistent network settings              |
-
 ## Step 9 – Opening the Web Console and Checking the IP Address
 
 ### What I Did
@@ -241,34 +227,6 @@ With the IP address confirmed from the console, I proceeded to configure the nod
 
 ![Node Configuration Interface](./images/Week01/12-confiNode.png)
 _Figure 10a – The configuration panel for the Linux Host node, showing the network interface settings file._
-
-#### Editing the Configuration File
-
-Inside the configuration editor, I could see the network interface settings. The relevant section initially appeared with the lines commented out (preceded by `#`), which means they are disabled:
-
-**Before (commented out / inactive):**
-
-```bash
-# auto eth0
-# iface eth0 inet static
-#   address 0.0.0.0
-#   netmask 255.255.255.0
-```
-
-I made the following changes:
-
-1. I **removed the `#` symbols** from each line to activate the configuration.
-2. I **replaced `0.0.0.0`** with the IP address I identified from the Web Console in Step 9.
-3. I confirmed the **netmask** was set to `255.255.255.0`, which corresponds to a standard `/24` subnet.
-
-**After (configured and active):**
-
-```bash
-auto eth0
-iface eth0 inet static
-  address 192.168.10.20
-  netmask 255.255.255.0
-```
 
 4. I clicked **Save** to apply the configuration.
 
