@@ -14,23 +14,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Task Overview](#task-overview)
-2. [Step 1 – Downloading and Renaming the GNS3 OVA File](#step-1--downloading-and-renaming-the-gns3-ova-file)
-3. [Step 2 – Importing the OVA File into VirtualBox](#step-2--importing-the-ova-file-into-virtualbox)
-4. [Step 3 – Starting the Virtual Machine](#step-3--starting-the-virtual-machine)
-5. [Step 4 – Finding the GNS3 Web UI IP Address](#step-4--finding-the-gns3-web-ui-ip-address)
-6. [Step 5 – Accessing the GNS3 Web Dashboard](#step-5--accessing-the-gns3-web-dashboard)
-7. [Step 6 – Creating a New Project](#step-6--creating-a-new-project)
-8. [Step 7 – Adding a Linux Host Node](#step-7--adding-a-linux-host-node)
-9. [Step 8 – Starting the Project and Exploring Node Properties](#step-8--starting-the-project-and-exploring-node-properties)
-10. [Step 9 – Opening the Web Console and Checking the IP Address](#step-9--opening-the-web-console-and-checking-the-ip-address)
-11. [Step 10 – Configuring the Node's IP Address](#step-10--configuring-the-nodes-ip-address)
-12. [Reflection and Summary](#reflection-and-summary)
-
----
-
 ## Task Overview
 
 In this week's tutorial, I was required to set up and explore the **GNS3 network simulation environment** using a pre-built virtual machine (VM) provided by CQU. GNS3 (Graphical Network Simulator-3) is an open-source tool that allows us to design and simulate network topologies without needing physical hardware like routers and switches.
@@ -304,24 +287,7 @@ I also learned the structure of the Linux network interface configuration file (
 
 ---
 
-## Reflection and Summary
-
-### Summary of Completed Tasks
-
-| Task                                                        | Status       | Screenshot Reference |
-| ----------------------------------------------------------- | ------------ | -------------------- |
-| Downloaded GNS3 OVA from Moodle and renamed with Student ID | ✅ Completed | Figure 1             |
-| Imported OVA into VirtualBox                                | ✅ Completed | Figure 2             |
-| Started the GNS3 VM in VirtualBox                           | ✅ Completed | Figure 3             |
-| Located the Web UI IP address from the VM screen            | ✅ Completed | Figure 4             |
-| Accessed the GNS3 Web Dashboard in browser                  | ✅ Completed | Figure 5a, 5b        |
-| Created a new project named with my Student ID              | ✅ Completed | Figure 6a, 6b        |
-| Added a Linux Host node to the canvas                       | ✅ Completed | Figure 7             |
-| Started the project and annotated canvas with student info  | ✅ Completed | Figure 8a, 8b        |
-| Opened Web Console and ran `ip addr show`                   | ✅ Completed | Figure 9             |
-| Configured static IP address on the Linux Host node         | ✅ Completed | Figure 10a, 10b      |
-
-### Personal Reflection
+## Reflection
 
 This was my first time using GNS3, and I found the setup process straightforward once I understood that the GNS3 environment runs entirely inside a VirtualBox VM. Initially I was unsure why we were using a browser instead of the GNS3 desktop application, but I now understand that the VM hosts a GNS3 server and the browser is simply the client interface connecting to it.
 
