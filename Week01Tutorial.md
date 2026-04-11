@@ -243,6 +243,11 @@ I learned the difference between **dynamic (DHCP)** and **static IP** addressing
 
 I also learned the structure of the Linux network interface configuration file (`/etc/network/interfaces`), which uses keywords like `auto` (bring up the interface automatically at boot) and `iface` (define the interface settings). Understanding this file format will be important in future tutorials when I configure more complex network setups.
 
+> [!NOTE]
+> **📁 Source Files – Week 01 Tutorial**
+>
+> - **Source File of Week 01 Tutorial:** [Click here to view →](./files/week01/GNS3-Intro-12316923.gns3project)
+
 ---
 
 ## Reflection
