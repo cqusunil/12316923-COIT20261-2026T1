@@ -175,6 +175,11 @@ ping 192.168.10.28
 
 **Result:** 0 replies, **100% packet loss** — no device exists at `192.168.10.28`. The error message **"Destination Host Unreachable"** means Host1 sent an ARP broadcast asking "who has `192.168.10.28`?" and received no response — confirming the address is unassigned on this network.
 
+> [!NOTE]
+> **📁 Source Files – Week 02 Tutorial**
+>
+> - **Source File of Week 02 Tutorial:** [Click here to view →](./files/week02/Setting-IP-12316923.gns3project)
+
 ---
 
 ## Reflection
