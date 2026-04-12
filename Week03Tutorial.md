@@ -33,7 +33,7 @@ I reused the existing project from Week 02 and renamed it `W03-Setting-IP-123169
 
 I opened the `W03-Setting-IP-12316923` project in GNS3. All four hosts were already configured with static IP addresses and connected to Switch1 in a star topology. All nodes showed a green indicator confirming they were running.
 
-![Network topology showing all four hosts connected to Switch1](./images/Week03/01-NetworkDiagram.png)
+![Network topology showing all four hosts connected to Switch1](./images/week03/01-NetworkDiagram.png)
 _Figure 1 – The GNS3 network topology for Week 03. Host1 (Client, `192.168.10.20/24`) and Host2 (Server, `192.168.10.21/24`) are used for the Netcat task._
 
 ### Step 2 – Starting the Netcat Server on Host2
@@ -88,7 +88,7 @@ I stopped Netcat on both sides by pressing **`Ctrl + D`**.
 
 ### Step 5 – Screenshot of Client and Server
 
-![Netcat client and server communication](./images/Week03/02-MessageFromClientToServerAndSTC.png)
+![Netcat client and server communication](./images/week03/02-MessageFromClientToServerAndSTC.png)
 _Figure 2 – Both Host1 (Client, left) and Host2 (Server, right) consoles shown side by side. The client connected with `nc 192.168.10.21 12345` and the server listened with `nc -l -p 12345`. Messages were exchanged successfully in both directions including name and Student ID._
 
 ---
@@ -99,8 +99,8 @@ _Figure 2 – Both Host1 (Client, left) and Host2 (Server, right) consoles shown
 
 In GNS3, I right-clicked on the link connecting **Host1 to Switch1** and selected **Start capture**. In the dialog that appeared I selected **Ethernet** as the link type and named the file:
 
-![Netcat client and server communication](./images/Week03/03.1-Capture-ping.png)
-![Netcat client and server communication](./images/Week03/03.2-Capture-ping.png)
+![Netcat client and server communication](./images/week03/03.1-Capture-ping.png)
+![Netcat client and server communication](./images/week03/03.2-Capture-ping.png)
 
 ```
 Capture-Basics-12316923-ping-netcat.pcap
@@ -144,7 +144,7 @@ The message appeared immediately on Host3's console, confirming the TCP connecti
 
 #### Screenshot
 
-![Host1 and Host3 Netcat + Ping capture session](./images/Week03/03-ClientToServerAndSTC.png)
+![Host1 and Host3 Netcat + Ping capture session](./images/week03/03-ClientToServerAndSTC.png)
 _Figure 3 – Host1 (left) shows the Netcat client command `nc 192.168.10.22 12345` and two ping sessions to Host2. Host3 (right) shows the server `nc -l -p 12345` receiving the message "Hello My name Sunil". All traffic during this session was captured on the Host1–Switch1 link._
 
 ### Step 4 – Stopping the Capture and Transferring the File
@@ -170,9 +170,9 @@ The capture file has been saved and submitted as:
 
 This file contains both the **ICMP ping packets** (from the ping to Host2) and the **TCP packets** (from the Netcat session to Host3), all recorded on the Host1–Switch1 link.
 
-![location of file](./images/Week03/04-PCAP-File.png)
+![location of file](./images/week03/04-PCAP-File.png)
 
-![fileopen](./images/Week03/05-pcap-file-open.png)
+![fileopen](./images/week03/05-pcap-file-open.png)
 
 > [!NOTE]
 > **📁 Source Files – Week 03 Tutorial**
