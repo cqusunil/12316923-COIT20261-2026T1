@@ -41,7 +41,7 @@ I created the project and built the following topology:
 
 The router acts as the bridge between the two subnets. Without it, hosts on Network 1 cannot reach Host3 on Network 2.
 
-![Full network topology with two subnets and router](./images/Week04/01-View-Routes-12316923.png)
+![Full network topology with two subnets and router](./images/week04/01-View-Routes-12316923.png)
 _Figure 1 – Network topology: Host1 (`192.168.10.10`) and Host2 (`192.168.10.11`) on Network 1 connected via Switch1 to Router1, which connects to Host3 (`192.168.20.10`) on Network 2._
 
 ### Step 2 – Configuring Host1
@@ -50,14 +50,14 @@ I right-clicked **Host1 → Configure** and set the following:
 
 > The `gateway 192.168.10.1` line tells Host1 to send all traffic destined for other subnets to Router1. The `ip_forward=0` disables packet forwarding since Host1 is an end host, not a router.
 
-![Host1 configuration](./images/Week04/02-Config-Host2.png)
+![Host1 configuration](./images/week04/02-Config-Host2.png)
 _Figure 2 – Host1 configured with IP `192.168.10.10/24`, gateway `192.168.10.1`, and forwarding disabled._
 
 ### Step 3 – Configuring Host2
 
 I right-clicked **Host2 → Configure** and set:
 
-![Host2 configuration](./images/Week04/03-Config-Host2.png)
+![Host2 configuration](./images/week04/03-Config-Host2.png)
 _Figure 3 – Host2 configured with IP `192.168.10.11/24`, gateway `192.168.10.1`, and forwarding disabled._
 
 ### Step 4 – Configuring Host3
@@ -66,7 +66,7 @@ I right-clicked **Host3 → Configure** and set:
 
 > Host3 uses `192.168.20.1` as its gateway — the Router1 eth1 interface on Network 2.
 
-![Host3 configuration](./images/Week04/04-Config-Host3.png)
+![Host3 configuration](./images/week04/04-Config-Host3.png)
 _Figure 4 – Host3 configured with IP `192.168.20.10/24`, gateway `192.168.20.1`, and forwarding disabled._
 
 ### Step 5 – Configuring Router1
@@ -75,7 +75,7 @@ Router1 requires two interface configurations — one for each subnet — and IP
 
 > Setting `ip_forward=1` on Router1 is critical. Without it, the router receives packets but drops them instead of forwarding them between subnets — hosts would be unreachable across networks.
 
-![Router1 configuration](./images/Week04/05-Config-Router.png)
+![Router1 configuration](./images/week04/05-Config-Router.png)
 _Figure 5 – Router1 configured with eth0 (`192.168.10.1/24`) facing Network 1 and eth1 (`192.168.20.1/24`) facing Network 2, with IP forwarding enabled._
 
 ### Step 6 – Viewing Routing Tables
@@ -86,7 +86,7 @@ After starting all nodes, I opened the Web Console on each device and ran:
 ip route show
 ```
 
-![Routing tables for all hosts and router](./images/Week04/06-Showing-RoutingIP.png)
+![Routing tables for all hosts and router](./images/week04/06-Showing-RoutingIP.png)
 _Figure 6 – Routing tables for Host1, Host2, Host3 and Router1 shown alongside their forwarding status._
 
 Router1 has direct routes to **both subnets** — no default gateway needed since it is physically connected to both networks. `net.ipv4.ip_forward = 1` confirms forwarding is active.
@@ -97,10 +97,10 @@ Router1 has direct routes to **both subnets** — no default gateway needed sinc
 ping 192.168.20.10
 ```
 
-![Host1 ping to Host3](./images/Week04/07-pingfromh1toh3.png)
+![Host1 ping to Host3](./images/week04/07-pingfromh1toh3.png)
 _Figure 7 – Host1 successfully pings Host3 (`192.168.20.10`) across subnets via Router1. 5 packets, 0% packet loss._
 
-![All hosts ping results](./images/Week04/07-Ping-from-host.png)
+![All hosts ping results](./images/week04/07-Ping-from-host.png)
 _Figure 8 – Cross-subnet ping results from all hosts: Host3 pinging Host1 and Host2, and Host2 pinging Host3 — all successful with 0% packet loss. TTL=63 on all results confirms exactly one router hop._
 
 | Source | Destination             | Packets | Loss | Avg RTT  | TTL |
@@ -131,7 +131,7 @@ The template project uses **FRRouting (FRR)** — an open-source software router
 
 I imported the `OSPF-Basics-Template.gns3project` and saved it as `OSPF-Basics-12316923.gns3project`. After starting all nodes and waiting for the FRR routers to boot (until the `frr#` prompt appeared), the topology showed two parallel paths between Host1 and Host2.
 
-![OSPF network topology](./images/Week04/10-OSPF_Basics-12316923.png)
+![OSPF network topology](./images/week04/10-OSPF_Basics-12316923.png)
 _Figure 9 – The OSPF network topology: Host1 and Host2 connected via four FRR routers with two parallel paths — top path via FRR-2 and NETem1, bottom path via FRR-3 and NETem2._
 
 There are **two paths** between Host1 and Host2:
@@ -151,7 +151,7 @@ show ip ospf neighbor
 show ip route
 ```
 
-![FRR-1 OSPF route, neighbour and ip route output](./images/Week04/08-show-neg-route.png)
+![FRR-1 OSPF route, neighbour and ip route output](./images/week04/08-show-neg-route.png)
 _Figure 10 – FRR-1 console showing OSPF route table, neighbour adjacencies (both FRR-2 and FRR-3 in `Full/DR` state), and the full IP routing table._
 
 ### Step 3 – Traceroute Before Link Failure
@@ -176,7 +176,7 @@ I waited a few seconds for OSPF to detect the failure via lost Hello packets and
 traceroute 10.10.6.0
 ```
 
-![Traceroute before and after link failure](./images/Week04/09-Traceroutes.png)
+![Traceroute before and after link failure](./images/week04/09-Traceroutes.png)
 _Figure 11 – Traceroute from Host1 to `10.10.6.0` before (top) and after (bottom) stopping NETem1. After the failure, hop 3 shows `* * *` — the top path is broken and OSPF is rerouting via the bottom path through FRR-3._
 
 |               | Before Link Failure | After Link Failure    |
