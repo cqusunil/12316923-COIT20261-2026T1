@@ -38,34 +38,15 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 │   │   ├── 01-DownloadFIle.png
 │   │   ├── 02-OpenGNS3IVM.png
 │   │   ├── 03-FIleOpen.png
-│   │   ├── 04-GetIPAddressForWeb.png
-│   │   ├── 05-Dashboard.png
-│   │   ├── 06-Dashboard.png
-│   │   ├── 07-CreateProject.png
-│   │   ├── 08-ProjectInterface.png
-│   │   ├── 09-Node.png
-│   │   ├── 10-NodeAdd.png
-│   │   ├── 11-Console.png
-│   │   ├── 12-confiNode.png
-│   │   ├── 14-configIP.png
-│   │   └── 15-NodeWithInfo.png
+ 
 │   │
 │   └── Week02/                      ← Screenshots for Week 02
 │       ├── 01-LinkNode.png
 │       ├── 01.1-LinkNode.png
 │       ├── 01.2-LinkNode.png
 │       ├── 02.1-Cofig-Network-01.png
-│       ├── 02.1-Cofig-Network-02.png
-│       ├── 02.1-Cofig-Network-03.png
-│       ├── 02.1-Cofig-Network-04.png
-│       ├── 03-CommandLine.png
-│       ├── 04.1-IPAddr-Show-Host1.png
-│       ├── 04.2-IPAddr-Show-Host2.png
-│       ├── 04.3-IPAddr-Show-Host3.png
-│       ├── 04.4-IPAddr-Show-Host4.png
-│       └── 05-testing-ping.png
 │
-└── (Week03 ... folders coming as term progresses)
+└── (Week03 ... folders and soom as term progresses)
 ```
 
 ---
@@ -98,17 +79,6 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 | **Linux Host (GNS3 Node)** | — | Simulated end-host device in network topologies |
 | **GNS3 Web UI** | Browser-based | Front-end interface for managing GNS3 projects |
 | **Google Chrome** | Latest | Accessing the GNS3 Web UI |
-
----
-
-## 🔗 Useful Links
-
-| Resource | URL |
-|----------|-----|
-| CQU Moodle – COIT20261 | https://moodle.cqu.edu.au/course/view.php?id=84664 |
-| GNS3 OVA Download (Moodle Announcement) | https://moodle.cqu.edu.au/mod/forum/discuss.php?d=1098875 |
-| GNS3 Official Documentation | https://docs.gns3.com |
-| Oracle VirtualBox Manual | https://www.virtualbox.org/manual/ |
 
 ---
 
