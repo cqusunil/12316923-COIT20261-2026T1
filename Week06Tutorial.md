@@ -18,7 +18,7 @@
 
 ### Task Overview
 
-I reused the `Week06-Setting-IP-12316923` project which contains four Linux hosts on the same subnet connected through Switch1.
+I reused the `week06-Setting-IP-12316923` project which contains four Linux hosts on the same subnet connected through Switch1.
 
 | Host           | IP Address         |
 | -------------- | ------------------ |
@@ -27,7 +27,7 @@ I reused the `Week06-Setting-IP-12316923` project which contains four Linux host
 | Host3 (Host C) | `192.168.10.22/24` |
 | Host4 (Host D) | `192.168.10.23/24` |
 
-![Task 1 network topology – four hosts on one switch](./images/Week06/01-T1-Network-Diagram.png)
+![Task 1 network topology – four hosts on one switch](./images/week06/01-T1-Network-Diagram.png)
 _Figure 1 – The Week 06 Task 1 network: Host1 (Client, `192.168.10.20/24`) and Host2 (Server, `192.168.10.21/24`) used as Host A and B. All four hosts share the `192.168.10.0/24` subnet via Switch1._
 
 ### Step 1 – View ARP Table Before Any Ping (Empty State)
@@ -56,13 +56,13 @@ ip neigh show
 
 **Output:**
 
-![ARP table of Host1 showing STALE and REACHABLE states](./images/Week06/02-T1-ARP-Basics-12316923-HostA-Table.png)
+![ARP table of Host1 showing STALE and REACHABLE states](./images/week06/02-T1-ARP-Basics-12316923-HostA-Table.png)
 _Figure 2 – Host1's ARP table progression: initially empty, then Host2 added as REACHABLE after ping, then Host3 added as REACHABLE while Host2 transitions to STALE after time passes without communication._
 
 > [!NOTE]
 > **📁 Source Files – Week 06**
 >
-> - **Exported GNS3 Project (Task 2):** [Click here to view →](./files/week06/Week06-Setting-IP-12316923.gns3project)
+> - **Exported GNS3 Project (Task 2):** [Click here to view →](./files/week06/week06-Setting-IP-12316923.gns3project)
 
 ---
 
@@ -80,7 +80,7 @@ I built the topology with:
 - **Host3** and **Host4** → **Switch2** → **Router2 eth1** (Subnet 2)
 - **Router1 eth0** ↔ **Router2 eth0** directly connected (Subnet 3)
 
-![Default Gateway network topology with two routers and three subnets](./images/Week06/01-Default-Gateway-12316923.png)
+![Default Gateway network topology with two routers and three subnets](./images/week06/01-Default-Gateway-12316923.png)
 _Figure 3 – The Default Gateway topology: Subnet 1 (`192.168.10.0/24`) on the left with Router1, Subnet 2 (`192.168.20.0/24`) on the right with Router2, and Subnet 3 (`192.168.30.0/24`) connecting both routers directly._
 
 ### Step 2 – Ping Error Before Full Gateway Configuration
@@ -101,7 +101,7 @@ PING 192.168.20.3 → Destination Net Unreachable   ❌ Cross-subnet fails
 
 The error **"Destination Net Unreachable"** came from `192.168.10.1` (Router1) — meaning Router1 received the packet but had no route to `192.168.20.0/24` and sent back an ICMP unreachable message. This confirmed the routers needed gateway entries pointing to each other via Subnet 3.
 
-![Ping error showing Destination Net Unreachable before full config](./images/Week06/02-Ping-Error.png)
+![Ping error showing Destination Net Unreachable before full config](./images/week06/02-Ping-Error.png)
 _Figure 4 – Host1 console: ping to Host2 (same subnet `192.168.10.3`) succeeds, but ping to Host4 (`192.168.20.3`) returns "Destination Net Unreachable" from Router1 (`192.168.10.1`) — the routers were not yet configured to forward between subnets._
 
 ### Step 3 – Configuring Router Gateways
@@ -138,7 +138,7 @@ iface eth0 inet static
 
 After configuring both routers with correct gateways, I tested ping from multiple hosts:
 
-![Successful cross-subnet ping from Host1 and Host3](./images/Week06/03-Ping-Host-FromOneHostNext.png)
+![Successful cross-subnet ping from Host1 and Host3](./images/week06/03-Ping-Host-FromOneHostNext.png)
 _Figure 5 – Host1 (left) successfully pings Host2 within Subnet 1. Host3 (right) successfully pings Host2 (`192.168.10.3`) across subnets with TTL=62, and pings within Subnet 2 (Host3, Host4) with TTL=64._
 
 > [!NOTE]
