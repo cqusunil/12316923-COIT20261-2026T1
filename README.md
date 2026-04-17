@@ -76,7 +76,7 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
         ├── 02-ARP-Basics-12316923-HostA-Table.png
         ├── 01-Default-Gateway-12316923.png
         ├── 04-So on.........
----
+```
 
 ## 📚 Tutorial Index
 
@@ -94,7 +94,6 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 | Week 10 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 11 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 12 | *(Coming Soon)* | 🔜 Pending | — |
----
 
 ## 🛠️ Tools & Technologies Used
 
@@ -106,7 +105,6 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 | **GNS3 Web UI** | Browser-based | Front-end interface for managing GNS3 projects |
 | **Google Chrome** | Latest | Accessing the GNS3 Web UI |
 
----
 
 ## 👨‍🏫 Unit Contacts
 
@@ -115,7 +113,6 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 | **Unit Coordinator / Lecturer / Tutor** | MD Mamunur Rashid | [m.rashid@cqu.edu.au](mailto:m.rashid@cqu.edu.au) | Melbourne | 03 9616 0425 |
 | **Tutor** | Tarek Elwan | [t.a.elwan@cqu.edu.au](mailto:t.a.elwan@cqu.edu.au) | Sydney | — |
 
----
 
 ## ⚠️ Academic Integrity Notice
 
@@ -123,7 +120,6 @@ This repository is created for **personal learning and academic submission purpo
 
 Please do not copy or submit any content from this repository as your own work. Doing so may constitute **academic misconduct** under CQU's Academic Integrity Policy.
 
----
 
 ## 📬 Student Contact
 
@@ -135,6 +131,5 @@ Please do not copy or submit any content from this repository as your own work. 
 | **Unit** | COIT20261 – Network Routing and Switching |
 | **Term** | 2026 – Term 1 |
 
----
 
-*Last updated: Week 02 — This README will be updated as new tutorials are completed throughout Term 1, 2026.*
+ 
