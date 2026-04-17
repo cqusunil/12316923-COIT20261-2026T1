@@ -36,7 +36,7 @@ I added 4 Linux Host nodes and 1 OpenvSwitch, connecting each host starting from
 - Host3 → Switch1 **eth3**
 - Host4 → Switch1 **eth4**
 
-![Task 1 network topology with VLAN segments labelled](./images/Week05/01-Vlan-Basics-12316923-network.png)
+![Task 1 network topology with VLAN segments labelled](./images/week05/01-Vlan-Basics-12316923-network.png)
 _Figure 1 – Network topology: Host1 and Host2 in VLAN 1 (ID: 923), Host3 and Host4 in VLAN 2 (ID: 924). All four hosts connect to Switch1 via ports eth1–eth4. Router1 is visible but not yet connected — used in Task 2._
 
 ### Step 2 – Initialising OpenvSwitch and Applying VLAN Tags
@@ -61,7 +61,7 @@ The `ovs-vsctl show` output confirmed:
 - **eth3** → `tag: 924`
 - **eth4** → `tag: 924`
 
-![Switch1 VLAN port configuration verified](./images/Week05/02-Vlan-Basics-12316923-port.png)
+![Switch1 VLAN port configuration verified](./images/week05/02-Vlan-Basics-12316923-port.png)
 _Figure 2 – Switch1 console showing VLAN tag commands applied (highlighted green) and `ovs-vsctl show` confirming eth1/eth2 tagged as VLAN 923 and eth3/eth4 tagged as VLAN 924._
 
 ### Step 3 – Testing VLAN Isolation with Ping
@@ -82,7 +82,7 @@ ping 192.168.10.12 → 0/5 received, 100% loss — Destination Host Unreachable 
 ping 192.168.10.13 → 0/4 received, 100% loss — Destination Host Unreachable  ❌
 ```
 
-![Ping results showing VLAN isolation](./images/Week05/03-Vlan-Basics-12316923-ping.png)
+![Ping results showing VLAN isolation](./images/week05/03-Vlan-Basics-12316923-ping.png)
 _Figure 3 – Host1 console: successful ping to Host2 (same VLAN 923, 0% loss), and blocked pings to Host3 and Host4 (VLAN 924, 100% loss — "Destination Host Unreachable"). VLAN isolation confirmed._
 
 ---
@@ -97,7 +97,7 @@ I copied the project to `05-Task2-Vlan-Basics-12316923` and added a **Linux Rout
 
 I added **Router1** to the project and connected it to **Switch1 eth0**, which would be configured as a trunk port carrying both VLANs.
 
-![Task 2 network topology with Router1 and two VLAN subnets](./images/Week05/network-daigram.png)
+![Task 2 network topology with Router1 and two VLAN subnets](./images/week05/network-daigram.png)
 _Figure 4 – Task 2 topology: Host1 and Host2 on subnet `192.168.123.0/24` (VLAN 923), Host3 and Host4 on subnet `192.168.124.0/24` (VLAN 924). Router1 connects to Switch1 via eth0 and handles inter-VLAN routing through sub-interfaces._
 
 ### Step 2 – Configure Switch Trunk Port (eth0)
@@ -137,14 +137,14 @@ sysctl -w net.ipv4.ip_forward=1
 net.ipv4.ip_forward = 1
 ```
 
-![Router1 sub-interface configuration commands](./images/Week05/Router-Cmd.png)
+![Router1 sub-interface configuration commands](./images/week05/Router-Cmd.png)
 _Figure 5 – Router1 console showing VLAN sub-interface creation (`eth0.923`, `eth0.924`), IP address assignment, and IP forwarding enabled. `net.ipv4.ip_forward = 1` confirms the router is active._
 
 ### Step 4 – Testing Inter-VLAN Connectivity with Ping
 
 After configuring the router sub-interfaces, I tested connectivity from **Host1** (VLAN 923) to both VLANs, and from **Host4** (VLAN 924) back to VLAN 923:
 
-![Inter-VLAN ping results from Host1 and Host4](./images/Week05/ping-from-vlan1tovlan2.png)
+![Inter-VLAN ping results from Host1 and Host4](./images/week05/ping-from-vlan1tovlan2.png)
 _Figure 6 – Host1 (left): first ping to `192.168.124.10` fails before router config, then succeeds with TTL=63 after router sub-interfaces are up. Host4 (right): successfully pings both `192.168.123.10` and `192.168.123.11` with TTL=63 — confirming full inter-VLAN routing._
 
 > [!NOTE]
