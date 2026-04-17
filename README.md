@@ -23,32 +23,59 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 ```
 12316923-COIT20261-2026T1/
 │
-├── README.md                        ← You are here
+├── README.md                              ← You are here
 │
-├── Week01Tutorial.md                ← Week 01 tutorial submission
-├── Week02Tutorial.md                ← Week 02 tutorial submission
+├── Week01Tutorial.md                      ← Week 01 submission
+├── Week02Tutorial.md                      ← Week 02 submission
+├── Week03Tutorial.md                      ← Week 03 submission
+├── Week04Tutorial.md                      ← Week 04 submission
+├── Week05Tutorial.md                      ← Week 05 submission
+├── Week06Tutorial.md                      ← Week 06 submission
 │
 ├── files/
-│   ├── week01/                      ← Supporting files for Week 01
-│   └── week02/                      ← Supporting files for Week 02
-│       └── Setting-IP-12316923.gns3project
+│   ├── week01/
+│   ├── week02/
+│   │   └── Setting-IP-12316923.gns3project
+│   ├── week03/
+│   │   └── Capture-Basics-12316923-ping-netcat.pcap
+│   ├── week04/
+│   │   └── 04-View-Routes-12316923.gns3project
+│   ├── week05/
+│   │   ├── Vlan-Basics-12316923.gns3project
+│   │   └── 05-Task2-Vlan-Basics-12316923.gns3project
+│   └── week06/
+│       └── W6-T2-Default-Gateway-12316923.gns3project
 │
-├── images/
-│   ├── Week01/                      ← Screenshots for Week 01
-│   │   ├── 01-DownloadFIle.png
-│   │   ├── 02-OpenGNS3IVM.png
-│   │   ├── 03-FIleOpen.png
- 
-│   │
-│   └── Week02/                      ← Screenshots for Week 02
-│       ├── 01-LinkNode.png
-│       ├── 01.1-LinkNode.png
-│       ├── 01.2-LinkNode.png
-│       ├── 02.1-Cofig-Network-01.png
-│
-└── (Week03 ... folders and soom as term progresses)
-```
-
+└── images/
+    ├── Week01/
+    │   ├── 01-DownloadFIle.png
+    │   ├── 02-OpenGNS3IVM.png
+    │   ├── 03-FIleOpen.png
+    │   ├── 04-So on.........
+    ├── Week02/
+    │   ├── 01-LinkNode.png
+    │   ├── 01.1-LinkNode.png
+    │   ├── 01.2-LinkNode.png
+    │   ├── 02.1-Cofig-Network-01.png
+    ├── Week03/
+    │   ├── 01-NetworkDiagram.png
+    │   ├── 02-MessageFromClientToServerAndSTC.png
+    │   └── 03-ClientToServerAndSTC.png
+    ├── Week04/
+    │   ├── 01-View-Routes-12316923.png
+    │   ├── 02-Config-Host2.png
+    │   ├── 03-Config-Host2.png
+    │   ├── 04-So on.........
+    ├── Week05/
+    │   ├── 01-Vlan-Basics-12316923-network.png
+    │   ├── 02-Vlan-Basics-12316923-port.png
+    │   ├── 03-Vlan-Basics-12316923-ping.png
+    │   ├── 04-So on.........
+    └── Week06/
+        ├── 01-Network-Diagram.png
+        ├── 02-ARP-Basics-12316923-HostA-Table.png
+        ├── 01-Default-Gateway-12316923.png
+        ├── 04-So on.........
 ---
 
 ## 📚 Tutorial Index
@@ -57,17 +84,16 @@ The tutorials use **GNS3** (Graphical Network Simulator-3) running inside an **O
 |------|-------|--------|------|
 | Week 01 | Introduction to GNS3 – Setup, Web UI, Linux Host Node & IP Configuration | ✅ Complete | [View →](./Week01Tutorial.md) |
 | Week 02 | Static IP Addressing & Network Connectivity Testing with Ping | ✅ Complete | [View →](./Week02Tutorial.md) |
-| Week 03 | *(Coming Soon)* | 🔜 Pending | — |
-| Week 04 | *(Coming Soon)* | 🔜 Pending | — |
-| Week 05 | *(Coming Soon)* | 🔜 Pending | — |
-| Week 06 | *(Coming Soon)* | 🔜 Pending | — |
+| Week 03 | Netcat Communications & Packet Capturing | ✅ Complete | [View →](./Week03Tutorial.md) |
+| Week 04 | View Routing Tables & Dynamic Routing with OSPF | ✅ Complete | [View →](./Week04Tutorial.md) |
+| Week 05 | VLANs on OpenvSwitch & Inter-VLAN Routing | ✅ Complete | [View →](./Week05Tutorial.md) |
+| Week 06 | ARP & Default Gateways | ✅ Complete | [View →](./Week06Tutorial.md) |
 | Week 07 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 08 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 09 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 10 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 11 | *(Coming Soon)* | 🔜 Pending | — |
 | Week 12 | *(Coming Soon)* | 🔜 Pending | — |
-
 ---
 
 ## 🛠️ Tools & Technologies Used
